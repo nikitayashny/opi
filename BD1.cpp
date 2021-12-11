@@ -68,6 +68,60 @@ int main() {
 			Menu();
 			break;
 			////////////////////////////////////
+		case 2:
+			system("cls");
+
+			if (amountOfData != 0) {
+				Print(d, amountOfData);
+			}
+			else
+				cout << "Данные пусты!" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
+		case 3:
+			system("cls");
+
+			if (amountOfData != 0) {
+				DataChange(d, amountOfData);
+			}
+			else
+				cout << "Данные пусты!" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
+		case 4:
+			system("cls");
+
+			if (amountOfData != 0) {
+				DeleteData(d, amountOfData);
+			}
+			else
+				cout << "Данные пусты!" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
+		case 5:
+			system("cls");
+
+			amountOfData = 0;
+			d = new Data[amountOfData];
+
+			cout << "Данные удалены!" << endl;
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
 		default:
 			cout << "Неверно введен номер действия!" << endl;
 			system("pause");

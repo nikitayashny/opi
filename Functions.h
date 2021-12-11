@@ -25,4 +25,8 @@ struct Data {
 
 void DataEntry(Data* (&d), int& n);
 void ReadingData(Data* (&d), int& n, string fileName);
+void Print(Data* d, int n);
+void DataChange(Data* (&d), int n);
+void DeleteData(Data* (&d), int& n);
+
 
