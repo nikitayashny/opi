@@ -1,19 +1,19 @@
-#include "Functions.h"
+ï»¿#include "Functions.h"
 
 void DataEntry(Data* (&d), int& n)
 {
-	cout << "Ââåäèòå êîëè÷åñòâî äàííûõ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð´Ð°Ð½Ð½Ñ‹Ñ…: ";
 	cin >> n;
 
 	d = new Data[n];
 
 	for (int i = 0; i < n; i++) {
-		cout << "Ââåäèòå ÔÈÎ: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¤Ð˜Ðž: ";
 		cin >> d[i]._initial.surname;
 		cin >> d[i]._initial.name;
 		cin >> d[i]._initial.patronymic;
 
-		cout << "Ââåäèòå äàòó (äåíü, ìåñÿö, ãîä): ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ñ‚Ñƒ (Ð´ÐµÐ½ÑŒ, Ð¼ÐµÑÑÑ†, Ð³Ð¾Ð´): ";
 		cin >> d[i]._date.day;
 		cin >> d[i]._date.month;
 		cin >> d[i]._date.year;
@@ -25,7 +25,7 @@ void DataEntry(Data* (&d), int& n)
 
 void ReadingData(Data* (&d), int& n, string fileName)
 {
-	//ñîçäà¸ì ïîòîê äëÿ ÷òåíèÿ
+	//ÑÐ¾Ð·Ð´Ð°Ñ‘Ð¼ Ð¿Ð¾Ñ‚Ð¾Ðº Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ
 	ifstream reading(fileName);
 
 	if (reading) {
@@ -42,10 +42,10 @@ void ReadingData(Data* (&d), int& n, string fileName)
 			reading >> d[i]._date.month;
 			reading >> d[i]._date.year;
 		}
-		cout << "Äàííûå ñ÷èòàíû!" << endl;
+		cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÑ‡Ð¸Ñ‚Ð°Ð½Ñ‹!" << endl;
 	}
 	else
-		cout << "Îøèáêà îòêðûòèÿ ôàéëà!" << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°!" << endl;
 	reading.close();
 }
 
