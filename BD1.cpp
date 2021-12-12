@@ -122,6 +122,54 @@ int main() {
 			Menu();
 			break;
 			////////////////////////////////////
+		case 6:
+			system("cls");
+
+			if (amountOfData != 0) {
+				AddDate(d, amountOfData);
+				amountOfData++;
+			}
+			else
+				cout << "Данные пусты!" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
+		case 7:
+			system("cls");
+			int metod_menu;
+
+			cout << "Выберите метод сортировки: " << endl;
+			cout << "(1) Пузырьком (по возрастанию)" << endl;
+			cout << "(2) Пузырьком (по убыванию)" << endl;
+			cout << "(3) Выбором (по возрастанию)" << endl;
+			cout << "(4) Выбором (по убыванию)" << endl;
+
+			cin >> metod_menu;
+
+			switch (metod_menu)
+			{
+			case 1:
+				system("cls");
+
+				if (amountOfData != 0) {
+					DataSorting(d, amountOfData);
+					cout << "Данные отсортированы!" << endl;
+				}
+				else
+					cout << "Данные пусты!" << endl;
+				break;
+			default:
+				system("cls");
+				cout << "Неверно введен номер действия!" << endl;
+			}
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
 		default:
 			cout << "Неверно введен номер действия!" << endl;
 			system("pause");
