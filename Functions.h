@@ -32,3 +32,6 @@ void Copy(Data* (&d_n), Data* (&d_o), int n);
 void Copy(Data& d_n, Data& d_o);
 void AddDate(Data* (&d), int &n);
 void DataSorting(Data *d, int n);
+void DataSortingYbivanie(Data* d, int n);
+void DataSelectionSorting(Data* (&d), int n);
+void DataSelectionSortingYbivanie(Data* (&d), int n);

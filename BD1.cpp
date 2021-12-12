@@ -161,6 +161,40 @@ int main() {
 				else
 					cout << "Данные пусты!" << endl;
 				break;
+
+			case 2:
+				system("cls");
+
+				if (amountOfData != 0) {
+					DataSortingYbivanie(d, amountOfData);
+					cout << "Данные отсортированы!" << endl;
+				}
+				else
+					cout << "Данные пусты!" << endl;
+				break;
+
+			case 3:
+				system("cls");
+
+				if (amountOfData != 0) {
+					DataSelectionSorting(d, amountOfData);
+					cout << "Данные отсортированы!" << endl;
+				}
+				else
+					cout << "Данные пусты!" << endl;
+				break;
+
+			case 4:
+				system("cls");
+
+				if (amountOfData != 0) {
+					DataSelectionSortingYbivanie(d, amountOfData);
+					cout << "Данные отсортированы!" << endl;
+				}
+				else
+					cout << "Данные пусты!" << endl;
+				break;
+
 			default:
 				system("cls");
 				cout << "Неверно введен номер действия!" << endl;

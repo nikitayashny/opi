@@ -194,3 +194,51 @@ void DataSorting(Data* d, int n)
 	}
 
 }
+
+void DataSelectionSorting(Data* (&d), int n)
+{
+	int smallest_id;
+
+	//сортировка выбором
+	for (int i = 0; i < n; i++) {
+		smallest_id = i;
+		for (int j = i + 1; j < n; j++) {
+			if (d[j]._initial.surname < d[smallest_id]._initial.surname)
+				smallest_id = j;
+		}
+		swap(d[smallest_id], d[i]);
+	}
+
+}
+
+void DataSortingYbivanie(Data* d, int n) {
+	//Временная переменная
+	Data buf;
+
+	//сортировка методом пузырька
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (d[i]._initial.surname < d[j]._initial.surname) {
+				Copy(buf, d[j]);
+				Copy(d[j], d[i]);
+				Copy(d[i], buf);
+			}
+		}
+	}
+
+}
+
+void DataSelectionSortingYbivanie(Data* (&d), int n) {
+	int higher_id;
+
+	//сортировка выбором
+	for (int i = 0; i < n; i++) {
+		higher_id = i;
+		for (int j = i + 1; j < n; j++) {
+			if (d[j]._initial.surname > d[higher_id]._initial.surname)
+				higher_id = j;
+		}
+		swap(d[higher_id], d[i]);
+	}
+
+}
