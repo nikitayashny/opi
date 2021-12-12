@@ -204,6 +204,58 @@ int main() {
 			Menu();
 			break;
 			////////////////////////////////////
+		case 8:
+			system("cls");
+
+			if (amountOfData != 0) {
+				cout << "Введите фамилию:" << endl;
+				cin >> surname;
+				DataBinarySearch(d, surname, amountOfData);
+			}
+			else
+				cout << "Данные пусты!" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
+		case 9:
+			system("cls");
+			
+			cout << "Вывод в Input.txt или в другой файл (1 - в Input.txt, 2 - в другой файл):" << endl;
+			cin >> _actions;
+
+			if (_actions == 1) {
+				fileName = "Input.txt";
+			}
+
+			if (_actions == 2) {
+				cout << "Введите название файла: ";
+				cin >> fileName;
+			}
+
+			if (_actions != 1 && _actions != 2) {
+				cout << "Неверно введен номер действия!" << endl;
+
+				system("pause");
+				system("cls");
+				Menu();
+				break;
+			}
+
+			if (amountOfData != 0) {
+				SavingData(d, amountOfData, fileName);
+				cout << "Данные сохранены!" << endl;
+			}
+			else
+				cout << "Данные пусты!" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+			////////////////////////////////////
 		default:
 			cout << "Неверно введен номер действия!" << endl;
 			system("pause");

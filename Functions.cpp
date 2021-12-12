@@ -242,3 +242,78 @@ void DataSelectionSortingYbivanie(Data* (&d), int n) {
 	}
 
 }
+
+void DataBinarySearch(Data* d, string value, int n) {
+	int mid;
+	int left = 0;
+	int right = n;
+	
+	// сохраняем структуру во временном массиве
+	Data* buf;
+	buf = new Data[n];
+	Copy(buf, d, n);
+	
+	// сортировка структуры для бинарного поиска
+	DataSelectionSorting(d, n);
+
+	// бинарный поиск
+	while (right >= left) {
+		mid = (left + right) / 2;
+		if (d[mid]._initial.surname == value) {
+
+			cout << d[mid]._initial.surname << " " << d[mid]._initial.name << " " << d[mid]._initial.patronymic << endl;
+			if (d[mid]._date.day < 10)
+				cout << "0" << d[mid]._date.day << " ";
+
+			else
+				cout << d[mid]._date.day << " ";
+
+			if (d[mid]._date.month < 10)
+				cout << "0" << d[mid]._date.month << " " << d[mid]._date.year << endl;
+
+			else
+				cout << d[mid]._date.month << " " << d[mid]._date.year << endl;
+			Copy(d, buf, n);
+			delete[]buf;
+			return;
+
+		}
+		if (d[mid]._initial.surname < value)
+			left = mid + 1;
+
+		if (d[mid]._initial.surname > value)
+			right = mid - 1;
+	}
+	cout << "Данных не найдено!" << endl;
+	Copy(d, buf, n);
+	delete[]buf;
+}
+
+void SavingData(Data* d, int n, string fileName)
+{
+	// создается поток для записи
+	// открывает fileName и делает так, чтобы он был пустой
+	ofstream record(fileName, ios::out);
+
+	// условие: если файл открылся
+	if (record) {
+		record << n << endl;
+
+		for (int i = 0; i < n; i++) {
+			record << d[i]._initial.surname << endl;
+			record << d[i]._initial.name << endl;
+			record << d[i]._initial.patronymic << endl;
+
+			record << d[i]._date.day << " ";
+			record << d[i]._date.month << " ";
+			if (i < n - 1)
+				record << d[i]._date.year << endl;
+			else
+				record << d[i]._date.year;
+		}
+	}
+	else
+		cout << "Ошибка открытия файла!" << endl;
+
+	record.close();
+}
